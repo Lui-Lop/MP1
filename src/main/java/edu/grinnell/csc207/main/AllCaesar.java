@@ -3,10 +3,18 @@ package edu.grinnell.csc207.main;
 import java.io.PrintWriter;
 import edu.grinnell.csc207.util.CipherUtils;
 
+/**
+ * class AllCaesar to take in command line arguments to decrypt/encrypt strings.
+ */
 public class AllCaesar {
+  /**
+   *
+   * @param args
+   *  command line arguments to be used for caeser ciphering
+   */
   public static void main(String[] args) {
     PrintWriter pen = new PrintWriter(System.out, true);
-    if (args.length > 2 || args.length < 2){
+    if (args.length > 2 || args.length < 2) {
       System.err.println("Error: Incorrect number of parameters");
       return;
     } else {
@@ -20,7 +28,7 @@ public class AllCaesar {
         } // checks if characters are only lower case letters
       }
     } //checks if correct number of arguments are passed, if not returns an error else checks if string contains only lower case characters
-    if (args[0].equals("encode")){
+    if (args[0].equals("encode")) {
       for (char ch = 'a'; ch <= 'z'; ch++) {
         pen.printf("n = %c: %s\n", ch, CipherUtils.caesarEncrypt(args[1], ch));
       }
@@ -32,5 +40,5 @@ public class AllCaesar {
       System.err.println("Error: Invalid Option " + args[0] + ". Valid options are \"Encode\" and \"Encode\" ");
     } // checks if argument passed is valid option, if not error is given
     pen.close();
-  }
+  } // main where methods are written to be used
 }
