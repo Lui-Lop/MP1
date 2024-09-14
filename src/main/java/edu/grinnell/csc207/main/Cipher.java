@@ -26,35 +26,45 @@ public class Cipher {
 
     if (args.length == EXPECTED_NUM1_PARAMS) {
       for (int i = 0; i < args.length; i++) {
+        if (args[i].isEmpty()) {
+          if (!str.isEmpty()) {
+            System.err.println("Error: Empty kers are not permitted");
+            return;
+          } // if str is not empty, but empty string is found, error for empty key
+          return;
+        } // checks if command argument is empty, if so return error for empty key or nothing for empty string
         if (args[i].charAt(0) == '-') {
           if (args[i].equals("-caesar")) {
             if (cipher.isEmpty()) {
               cipher = args[i];
             } else {
-              System.err.println("Error: cipher parameter already given");
+              System.err.println("Error: strings must be only lowercase letters");
               return;
             } // checks if cipher variable is filled, if not set, if yes give error
           } else if (args[i].equals("-vigenere")) {
             if (cipher.isEmpty()) {
               cipher = args[i];
             } else {
-              System.err.println("Error: cipher parameter already given");
+              System.err.println("Error: strings must be only lowercase letters");
               return;
             } // checks if cipher variable is filled, if not set, if yes give error
           } else if (args[i].equals("-encode")) {
             if (action.isEmpty()) {
               action = args[i];
             } else {
-              System.err.println("Error: action parameter already give");
+              System.err.println("Error: strings must be only lowercase letters");
               return;
             } // checks if action variable is filled, if not set, if yes give error
           }  else if (args[i].equals("-decode")) {
             if (action.isEmpty()) {
               action = args[i];
             } else {
-              System.err.println("Error: action parameter already give");
+              System.err.println("Error: strings must be only lowercase letters");
               return;
             } // checks if action variable is filled, if not set, if yes give error
+          } else {
+            System.err.println("Error: No valid action specified. Legal values are '-encode' and '-decode'");
+            return;
           } // checks if command line argument starts with '-' to find proper variable to set
         } else {
           if (str.isEmpty()) {
