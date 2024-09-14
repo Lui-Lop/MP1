@@ -1,6 +1,11 @@
 package edu.grinnell.csc207.util;
+
 /**
  * class CipherUtils holds methods to be used by class AllCaesar and Cipher.
+ * @author Luis Lopez
+ * course: Fa CSC-207-01
+ * date: 9/10/24
+ * acknowledgements: Mentor Maria
  */
 public class CipherUtils {
   /**

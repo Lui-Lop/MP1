@@ -5,6 +5,10 @@ import edu.grinnell.csc207.util.CipherUtils;
 
 /**
  * class AllCaesar to take in command line arguments to decrypt/encrypt strings.
+ * @author Luis Lopez
+ * course: Fa CSC-207-01
+ * date: 9/10/24
+ * acknowledgements: Mentor Maria
  */
 public class AllCaesar {
     /**

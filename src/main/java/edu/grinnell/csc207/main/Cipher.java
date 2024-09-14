@@ -4,7 +4,11 @@ import java.io.PrintWriter;
 import edu.grinnell.csc207.util.CipherUtils;
 
 /**
- * cipher class takes in command line arguments to cipher appropriately.
+ * class cipher takes in command line arguments to cipher appropriately.
+ * @author Luis Lopez
+ * course: Fa CSC-207-01
+ * date: 9/10/24
+ * acknowledgements: Mentor Maria
  */
 public class Cipher {
   /**
