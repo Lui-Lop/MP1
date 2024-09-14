@@ -40,7 +40,7 @@ public class Cipher {
             return;
           } // if str is not empty, but empty string is found, error for empty key
           return;
-        } // checks if command argument is empty, if so return error for empty key or nothing for empty string
+        } // checks command argument, error if key empty, nothing for str empty
         if (args[i].charAt(0) == '-') {
           if (args[i].equals("-caesar")) {
             if (cipher.isEmpty()) {
@@ -71,7 +71,8 @@ public class Cipher {
               return;
             } // checks if action variable is filled, if not set, if yes give error
           } else {
-            System.err.println("Error: No valid action specified. Legal values are '-encode' and '-decode'");
+            System.err.printf("Error: No valid action specified.");
+            System.err.println("Legal values are '-encode' and '-decode'");
             return;
           } // checks if command line argument starts with '-' to find proper variable to set
         } else {

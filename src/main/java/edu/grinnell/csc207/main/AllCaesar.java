@@ -35,7 +35,7 @@ public class AllCaesar {
           return;
         } // checks if characters are only lower case letters, if not, error is given
       } // iterates through string to check if only lower case letters
-    } //checks if correct number of arguments are passed, if not returns an error else checks if string contains only lower case characters
+    } //checks arguments, error is given if not 4 arguments or if string given not all lower case
     if (args[0].equals("encode")) {
       for (char ch = 'a'; ch <= 'z'; ch++) {
         pen.printf("n = %c: %s\n", ch, CipherUtils.caesarEncrypt(args[1], ch));
@@ -45,7 +45,8 @@ public class AllCaesar {
         pen.printf("n = %c: %s\n", ch, CipherUtils.caesarDecrypt(args[1], ch));
       } // takes string and decrypts with each letter of the alphabet
     } else {
-      System.err.println("Error: Invalid Option " + args[0] + ". Valid options are \"Encode\" and \"Encode\" ");
+      System.err.println("Error: Invalid Option " + args[0]);
+      System.err.println(". Valid options are \"Encode\" and \"Encode\" ");
     } // checks if argument passed is valid option, if not error is given
     pen.close();
   } // main where methods are written to be used
