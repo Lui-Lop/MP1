@@ -10,7 +10,11 @@ public class Cipher {
   /**
    * expected amount of command line arguments.
    */
-  private static final int EXPECTED_NUM1_PARAMS = 4;
+  private static final int EXPECTED_NUM_PARAMS = 4;
+      /**
+   * variable to account for 26 lower case letters being used.
+   */
+  private static final int EXPECTED_NUME_PARAMS = 26;
   /**
    *
    * @param args
@@ -24,7 +28,7 @@ public class Cipher {
     String str = "";
     String key = "";
 
-    if (args.length == EXPECTED_NUM1_PARAMS) {
+    if (args.length == EXPECTED_NUM_PARAMS) {
       for (int i = 0; i < args.length; i++) {
         if (args[i].isEmpty()) {
           if (!str.isEmpty()) {
@@ -78,6 +82,22 @@ public class Cipher {
       System.err.printf("Error: Expected 4 parameters, received %d\n", args.length);
     } // end of main
 
+    for (int i = 0; i < str.length(); i++) {
+      char chr = str.charAt(i);
+      int check = (int) chr - (int) 'a';
+      if (check > EXPECTED_NUME_PARAMS || check < 0) {
+        System.err.println("Error: String contains characters other than lowercase letters.");
+        return;
+      } // checks if letter is lower case, if not error is given
+    } // iterates through key to check if all lower case letters
+    for (int i = 0; i < key.length(); i++) {
+      char chr = key.charAt(i);
+      int check = (int) chr - (int) 'a';
+      if (check > EXPECTED_NUME_PARAMS || check < 0) {
+        System.err.println("Error: String contains characters other than lowercase letters.");
+        return;
+      } // checks if letter is lower case, if not error is given
+    } // iterates through key to check if all lower case letters
     if (cipher.equals("-caesar")) {
       if (key.length() != 1) {
         System.err.println("Error: caesar cipher takes single character key");
